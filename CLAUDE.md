@@ -10,8 +10,30 @@ Calculates position sizing, risk parameters, and drawdown limits for prop firm t
 
 ## Architecture
 
-*To be documented as the codebase develops.*
+- `calculator.py` — pure formula logic, zero UI imports, testable independently against Excel reference
+- `settings.py` — JSON persistence to `%APPDATA%\GoldenBulletCalc\settings.json`
+- `ui/` — customtkinter widgets (theme, display, inputs, settings dialog)
+- `main.py` — window init, wires UI to calculator, handles lifecycle
+
+Formulas must match `Golden Bullet Risk Calculator V1.1.xlsx` cell-for-cell. The Excel file is the source of truth.
 
 ## Commands
 
-*To be documented once the tech stack is chosen.*
+```bash
+# Run the app
+python main.py
+
+# Run tests
+python -m pytest tests/ -v
+
+# Build standalone .exe
+python build.py
+# Output: release/GoldenBulletCalc.exe
+```
+
+## Distribution
+
+The compiled `.exe` is attached to GitHub Releases. Download on any Windows machine:
+```bash
+gh release download --repo leye3000/GOLDEN_BULLET --pattern "*.exe"
+```
