@@ -35,16 +35,16 @@ FONT_UI = "Segoe UI"
 FONT_MONO = "Consolas"
 
 FONT_TITLE = (FONT_UI, 12, "bold")
-FONT_LABEL = (FONT_UI, 9)
-FONT_LABEL_BOLD = (FONT_UI, 9, "bold")
+FONT_LABEL = (FONT_UI, 11)
+FONT_LABEL_BOLD = (FONT_UI, 11, "bold")
 FONT_BALANCE = (FONT_MONO, 16, "bold")
 FONT_RISK = (FONT_MONO, 18, "bold")
 FONT_RISK_LABEL = (FONT_UI, 10, "bold")
 FONT_TP_INPUT = (FONT_MONO, 11)
 FONT_STATUS = (FONT_UI, 10, "bold")
 FONT_STAT_VALUE = (FONT_MONO, 11, "bold")
-FONT_STAT_LABEL = (FONT_UI, 8)
-FONT_SECTION = (FONT_UI, 9, "bold")
+FONT_STAT_LABEL = (FONT_UI, 10)
+FONT_SECTION = (FONT_UI, 11, "bold")
 
 
 # ---------------------------------------------------------------------------
