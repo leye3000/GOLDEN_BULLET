@@ -1,6 +1,15 @@
-"""Build script — compiles GoldenBulletCalc.exe via PyInstaller.
+"""DEPRECATED - PyInstaller build is no longer the supported distribution path.
 
-Patches around Windows Defender interference with PE timestamp/checksum writes.
+PyInstaller-built .exe files are repeatedly quarantined by Bitdefender on the
+primary machine. The bootstrapper architecture (unpacking bytecode at runtime)
+triggers heuristic AV detection regardless of code signing or temp-dir tricks.
+
+Supported launch path: run.vbs + GoldenBullet.lnk shortcut, set up via setup.ps1.
+See CLAUDE.md for current run instructions.
+
+This file is retained only for emergency portable builds where Python cannot be
+installed on the target machine. Expect AV interference.
+
 Run from project root with venv activated:
     python build.py
 """

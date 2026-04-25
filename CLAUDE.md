@@ -20,20 +20,26 @@ Formulas must match `Golden Bullet Risk Calculator V1.1.xlsx` cell-for-cell. The
 ## Commands
 
 ```bash
-# Run the app
+# First-time setup (creates venv, installs deps, creates Desktop + Start Menu shortcuts)
+powershell -ExecutionPolicy Bypass -File setup.ps1
+
+# Daily use
+# Double-click "GoldenBullet" shortcut on Desktop, or press Windows key and search.
+# (run.vbs launches main.py via pythonw.exe with no console window.)
+
+# Run from CLI (development)
 python main.py
 
 # Run tests
 python -m pytest tests/ -v
-
-# Build standalone .exe
-python build.py
-# Output: release/GoldenBulletCalc.exe
 ```
 
 ## Distribution
 
-The compiled `.exe` is attached to GitHub Releases. Download on any Windows machine:
-```bash
-gh release download --repo leye3000/GOLDEN_BULLET --pattern "*.exe"
-```
+Personal-use, run-from-source. There is no compiled binary in the supported path —
+PyInstaller `.exe` builds were repeatedly quarantined by Bitdefender heuristics, so
+distribution is now: `git clone` → `setup.ps1` → launch via shortcut. The same flow
+works for VPS deployment.
+
+`build.py` and `release/` remain in the repo as a deprecated emergency-portable
+fallback (see `build.py` docstring). Not for routine use.
